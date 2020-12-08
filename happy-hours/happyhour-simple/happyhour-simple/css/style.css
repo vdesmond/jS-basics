@@ -1,7 +1,16 @@
 
 body {
-	background: #FF6600; /* hexadecimal number */
+	background: #D8DEE9; /* hexadecimal number */
 	padding: 15px;
 	font-size: 30px;
+	color: #3B4252
+}
+
+h2 {
+	color:#434C5E
+}
+
+h1 {
+	color: #BF616A
 }
 
