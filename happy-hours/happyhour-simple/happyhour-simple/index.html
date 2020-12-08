@@ -1,48 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="Happy Hour App - How about a drink!?">
-		<meta name="keywords" content="happy hour, drink, beers">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Happy Hour App - How about a drink!?" />
+    <meta name="keywords" content="happy hour, drink, beers" />
 
-		<title>Happy Hour</title>
-		
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
+    <title>Happy Hour</title>
 
-		<script>
-		
-			// Our List of Bars
-			var bars = [
-				'Siggys',
-				'Blind Tiger',
-				'Zum Schneider',
-				'One Month',
-				'Home Sweet Home',
-				'Union Pool'
-			];
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-			// Our List of Friends
-			var friends = [
-				'Mattan',
-				'Chris',
-				'Lee',
-				'Casey',
-				'that girl you forgot to text back',
-				'Kayne West'
-			];
+    <script>
+      		// Movies
+      var movies = [
+      	'Inception',
+      	'TENET',
+      	'Interstellar',
+      	'The Prestige',
+      	'The Dark Knight',
+      	'The Dark Knight Rises'
+      ];
 
-			var randomNumber = Math.floor(Math.random()*bars.length);
-			
-			var barname = bars[randomNumber];
-			var friendname = friends[randomNumber];
+	
+      // Characters
+      var characters = [
+		  ["Cobb", "Eames", "Mal", "Fischer", "Arthur", "Saito", "Ariadne"],
+		  ["Sator", "Protagonist", "Neil", "Kat", "Priya"],
+		  ["Cooper", "Brand", "Murph", "TARS", "Mann", "Romilly"],
+		  ["Angier", "Borden", "Tesla", "Cutter", "Olivia"],
+		  ["Bruce", "Joker", "Gordon", "Alfred", "Harvey"],
+		  ["Bruce", "Bane", "Gordon", "Selina", "Talia Al Ghul", "Ra's Al Ghul"]
+	  ]
 
-			document.write("How about you go to <strong>" + barname + "</strong> with <strong>" + friendname + "</strong>?");
-		
-		</script>
-	</head>
-	<body>
-		<!-- PAGE CONTENT WILL BE PRINTED HERE --> 
-	</body>
+      var movieNumber = Math.floor(Math.random()*movies.length);
+	  var characterNumber = Math.floor(Math.random()*characters[movieNumber].length);
+
+      var moviename = movies[movieNumber];
+      var charactername = characters[movieNumber][characterNumber];
+	
+	// logging
+	console.log({movieNumber})
+	console.log({characterNumber})
+	console.log({moviename})
+	console.log({charactername})
+
+	// Printing
+      document.write("<h2>Your favorite Nolan character is <h1>" + charactername + "</h1> from <strong>" + moviename + "</strong>.</h2>");
+    </script>
+  </head>
+  <body>
+    <!-- PAGE CONTENT WILL BE PRINTED HERE -->
+  </body>
 </html>
