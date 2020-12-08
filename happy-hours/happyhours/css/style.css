@@ -13,4 +13,12 @@ h2 {
 h1 {
 	color: #BF616A
 }
-
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+  }
+strong {
+	color: #5E81AC;
+}

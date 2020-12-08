@@ -43,8 +43,11 @@
       var movieName = movies[movieNumber];
       var characterName = characters[movieNumber][characterNumber];
 
-      var imagePath = "images/" + movieName.replace(/\s/g, "");
-      +"/" + characterName.replace(/\s/g, "");
+      var imagePath =
+        "images/" +
+        movieName.replace(/\s/g, "") +
+        "/" +
+        characterName.replace(/\s/g, "");
       // logging
       console.log({ movieNumber });
       console.log({ characterNumber });
