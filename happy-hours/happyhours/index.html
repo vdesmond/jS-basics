@@ -12,41 +12,55 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <script>
-      		// Movies
+      // Movies
       var movies = [
-      	'Inception',
-      	'TENET',
-      	'Interstellar',
-      	'The Prestige',
-      	'The Dark Knight',
-      	'The Dark Knight Rises'
+        "Inception",
+        "TENET",
+        "Interstellar",
+        "The Prestige",
+        "The Dark Knight",
+        "The Dark Knight Rises",
+        "Dunkirk",
       ];
 
-	
       // Characters
       var characters = [
-		  ["Cobb", "Eames", "Mal", "Fischer", "Arthur", "Saito", "Ariadne"],
-		  ["Sator", "Protagonist", "Neil", "Kat", "Priya"],
-		  ["Cooper", "Brand", "Murph", "TARS", "Mann", "Romilly"],
-		  ["Angier", "Borden", "Tesla", "Cutter", "Olivia"],
-		  ["Bruce", "Joker", "Gordon", "Alfred", "Harvey"],
-		  ["Bruce", "Bane", "Gordon", "Selina", "Talia Al Ghul", "Ra's Al Ghul"]
-	  ]
+        ["Cobb", "Eames", "Mal", "Fischer", "Arthur", "Saito", "Ariadne"],
+        ["Sator", "Protagonist", "Neil", "Kat", "Priya"],
+        ["Cooper", "Brand", "Murph", "TARS", "Mann", "Romilly"],
+        ["Angier", "Borden", "Tesla", "Cutter", "Olivia"],
+        ["Bruce", "Joker", "Gordon", "Alfred", "Harvey"],
+        ["Bane", "Selina", "Talia", "Ra's Al Ghul"],
+        ["Farrier", "Alex", "Dawson", "Bolton", "Shivering soldier"],
+      ];
 
-      var movieNumber = Math.floor(Math.random()*movies.length);
-	  var characterNumber = Math.floor(Math.random()*characters[movieNumber].length);
+      // Random Choice
+      var movieNumber = Math.floor(Math.random() * movies.length);
+      var characterNumber = Math.floor(
+        Math.random() * characters[movieNumber].length
+      );
 
-      var moviename = movies[movieNumber];
-      var charactername = characters[movieNumber][characterNumber];
-	
-	// logging
-	console.log({movieNumber})
-	console.log({characterNumber})
-	console.log({moviename})
-	console.log({charactername})
+      var movieName = movies[movieNumber];
+      var characterName = characters[movieNumber][characterNumber];
 
-	// Printing
-      document.write("<h2>Your favorite Nolan character is <h1>" + charactername + "</h1> from <strong>" + moviename + "</strong>.</h2>");
+      var imagePath = "images/" + movieName.replace(/\s/g, "");
+      +"/" + characterName.replace(/\s/g, "");
+      // logging
+      console.log({ movieNumber });
+      console.log({ characterNumber });
+      console.log({ movieName });
+      console.log({ characterName });
+      console.log({ imagePath });
+
+      // Printing
+      document.write(
+        "<h2>Your favorite Nolan character is <h1>" +
+          characterName +
+          "</h1> from <strong>" +
+          movieName +
+          "</strong>.</h2>"
+      );
+      document.write("<img src=" + imagePath + ".jpg>");
     </script>
   </head>
   <body>
