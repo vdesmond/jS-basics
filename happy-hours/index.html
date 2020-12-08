@@ -29,18 +29,16 @@
        Works in CSS too */
     // Single line comment (doesn't work in CSS)
     //alert("I'm annoying");
-    var firstname = "Vignesh";
-    var lastname = "Desmond";
-    var fullname = firstname + " " + lastname
-    var a = 1;
-    var b = 2;
-    var c = a+b;
-    
-    document.write("<h1>Hello " + fullname + "!</h1>")
-    document.write("<h2>Sum is " + c + ".</h2>")
+    var username = prompt("Say my name.", "Walter");
 
+    if (username === "Heisenberg") {
+      document.write("<h1>" + username + ", eh!</h1>");
+      document.write("<body><h2>You're goddamn right.</h2></body>");
+    }
+    else {
+      document.write("<h1>" + username + "?</h1>");
+      document.write("<body><h2>No that's not my name.</h2></body>");
+    }
   </script>
-  <body>
-    <h2>Nice</h2>
-  </body>
+  
 </html>
