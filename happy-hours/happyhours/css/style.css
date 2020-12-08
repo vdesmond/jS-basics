@@ -1,24 +1,23 @@
-
 body {
-	background: #D8DEE9; /* hexadecimal number */
-	padding: 15px;
-	font-size: 30px;
-	color: #3B4252
+  background: #d8dee9; /* hexadecimal number */
+  padding: 15px;
+  font-size: 30px;
+  color: #3b4252;
 }
 
 h2 {
-	color:#434C5E
+  color: #434c5e;
 }
 
 h1 {
-	color: #BF616A
+  color: #bf616a;
 }
 img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 40%;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
 strong {
-	color: #5E81AC;
+  color: #5e81ac;
 }
