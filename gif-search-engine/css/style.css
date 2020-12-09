@@ -1,3 +1,8 @@
+html *
+{
+   font-family: Arial, Helvetica, sans-serif !important;
+}
+
 body {
   background: #d8dee9; /* hexadecimal number */
   padding: 15px;
@@ -20,4 +25,21 @@ img {
 }
 strong {
   color: #5e81ac;
+}
+#container {
+  position: absolute;
+  left: 10px;
+  top: 150px;
+  height: 500px;
+  width: 610px;
+  border: 3px solid#A3BE8C;
+  background-color: #8FBCBB;
+}
+
+.box {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background: #fff  url('ricardomilos.jpg') no-repeat;
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript: Animation</title>
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <h2>Ricardo Milos Gang</h2>
+  <body>
+   
+    <br />
+    <div id="container"></div>
+    <script>
+      for (var x = 0; x < 20; x++) {
+        setTimeout(function () {
+          var box = document.createElement("div");
+          box.className = "box";
+          console.log(box);
+          document.getElementById("container").appendChild(box);
+        }, 200 * x);
+      }
+    </script>
+  </body>
+</html>
