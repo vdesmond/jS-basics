@@ -1,6 +1,5 @@
-html *
-{
-   font-family: Arial, Helvetica, sans-serif !important;
+html * {
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 body {
@@ -33,7 +32,7 @@ strong {
   height: 500px;
   width: 610px;
   border: 3px solid#A3BE8C;
-  background-color: #8FBCBB;
+  background-color: #8fbcbb;
 }
 
 .box {
@@ -41,5 +40,5 @@ strong {
   width: 100px;
   height: 100px;
   margin: 10px;
-  background: #fff  url('ricardomilos.jpg') no-repeat;
+  background: #fff url("ricardomilos.jpg") no-repeat;
 }
