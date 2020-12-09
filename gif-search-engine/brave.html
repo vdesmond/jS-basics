@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Are you brave?</h1>
+    <a href="#" class="yes">Yes, I am!</a>
+    <br />
+    <a href="#" class="no">No, I am not.</a>
+
+    <script type="text/javascript">
+      var title = document.querySelector("h1");
+      var yay = document.querySelector(".yes");
+      var nah = document.querySelector(".no");
+
+      yay.addEventListener("click", function () {
+        title.innerHTML = "Are you sure!";
+        yay.innerHTML = "Yes, I'm sure!";
+        nah.innerHTML = "Nevermind, this ain't for me.";
+        yay.addEventListener("click", function () {
+          title.innerHTML = "Welcome to the Inner Circle";
+          yay.innerHTML = "";
+          nah.innerHTML = "";
+        });
+        nah.addEventListener("click", function () {
+          title.innerHTML = "Are you brave?";
+          yay.innerHTML = "Yes, I am!";
+          nah.innerHTML = "No, I am not.";
+        });
+      });
+
+      nah.addEventListener("click", function () {
+        title.innerHTML = "Are you sure!";
+        yay.innerHTML = "You know what, I'm going back!";
+        nah.innerHTML = "Yeah, this ain't for me.";
+
+        nah.addEventListener("click", function () {
+          title.innerHTML = "Well, that's just sad";
+          yay.innerHTML = "";
+          nah.innerHTML = "";
+        });
+        yay.addEventListener("click", function () {
+          title.innerHTML = "Are you brave?";
+          yay.innerHTML = "Yes, I am!";
+          nah.innerHTML = "No, I am not.";
+        });
+      });
+    </script>
+  </body>
+</html>
