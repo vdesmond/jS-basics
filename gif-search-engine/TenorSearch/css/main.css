@@ -5,7 +5,7 @@ body {
   background: #d8dee9;
 }
 h1 {
-  text-align: left;
+  text-align: center;
   color: #bf616a;
   font-size: 45px;
   font-family: Helvetica, sans-serif;
@@ -18,13 +18,15 @@ h1 {
   width: 60%;
   display: inline-block;
   padding: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
   font-size: 16px;
   font-family: Helvetica, sans-serif;
 }
 
 .container-button {
   width: 15%;
-  display: inline-block;
+  display: inline-size;
   padding: 15px;
   background-color: #a3be8c;
   color: white;
