@@ -4,13 +4,19 @@ function getInput() {
   console.log(inputText);
   return inputText;
 }
+
 function pushImages(input) {
   var container = document.querySelector(".js-container");
   container.innerHTML = input;
 }
 
-var searchGif = document.querySelector("button");
-searchGif.addEventListener("click", function () {
+document.querySelector("button").addEventListener("click", function () {
+  var inputText = document.querySelector("input").value;
+  console.log(inputText);
+  pushImages(inputText);
+});
+
+document.querySelector(".js-userinput").addEventListener("keyup", function () {
   var inputText = document.querySelector("input").value;
   console.log(inputText);
   pushImages(inputText);
