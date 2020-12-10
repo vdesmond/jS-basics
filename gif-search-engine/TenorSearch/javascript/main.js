@@ -2,11 +2,13 @@
 function pushGifs(input) {
   var response_objects = JSON.parse(input);
   topGifs = response_objects["results"];
-  console.log(topGifs);
-  var imageURL = topGifs[3]["media"][0]["tinygif"]["url"];
-  console.log(imageURL);
-  var container = document.querySelector(".js-container");
-  container.innerHTML = '<img src="' + imageURL + '">';
+  topGifs.forEach(function (element) {
+    console.log(element["media"][0]["tinygif"]["url"]);
+    var imageURL = element["media"][0]["tinygif"]["url"];
+    var container = document.querySelector(".js-container");
+    container.innerHTML +=
+      '<img src="' + imageURL + '" class="container-image">';
+  });
 }
 
 // // Capture text in Search box
@@ -28,7 +30,7 @@ function pushGifs(input) {
 //   });
 
 var apikey = "4ECYI66WVRAJ";
-var lmt = 8;
+var lmt = 32;
 
 // test search term
 var search_term = "excited";
