@@ -5,6 +5,7 @@ function pushGifs(input) {
   topGifs.forEach(function (element) {
     console.log(element["media"][0]["tinygif"]["url"]);
     var imageURL = element["media"][0]["tinygif"]["url"];
+
     container.innerHTML +=
       '<img src="' + imageURL + '" class="container-image">';
   });
@@ -12,9 +13,6 @@ function pushGifs(input) {
 
 // Load GIFs given search term
 function loadGIFs(search_term) {
-  var apikey = "4ECYI66WVRAJ"; // Your API Key Here
-  var lmt = 32;
-
   // using default locale of en_US
   var search_url =
     "https://api.tenor.com/v1/search?q=" +
@@ -36,6 +34,10 @@ function loadGIFs(search_term) {
   });
 }
 
+// Set Credentials and GIF limits
+var apikey = "4ECYI66WVRAJ"; // Your API Key Here
+var lmt = 32;
+
 // Set container
 var container = document.querySelector(".js-container");
 
@@ -43,7 +45,7 @@ var container = document.querySelector(".js-container");
 // Load when button pressed
 document.querySelector("button").addEventListener("click", function () {
   let inputText = document.querySelector("input").value;
-  container.innerHTML = "";
+  container.innerHTML = null;
   loadGIFs(inputText);
 });
 
@@ -54,7 +56,7 @@ document
     let inputText = document.querySelector("input").value;
     // Enter key
     if (event.which == 13) {
-      container.innerHTML = "";
+      container.innerHTML = null;
       loadGIFs(inputText);
     }
   });
