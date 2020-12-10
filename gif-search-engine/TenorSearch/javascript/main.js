@@ -5,7 +5,7 @@ function getInput() {
   return inputText;
 }
 
-//Push GIFs to container
+// Push GIFs to container
 function pushGifs(input) {
   var container = document.querySelector(".js-container");
   container.innerHTML = input;
