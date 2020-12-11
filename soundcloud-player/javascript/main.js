@@ -14,11 +14,12 @@ soundcloudAPI.embediFrame = function (songLink) {
     auto_play: true,
   }).then(function (embed) {
     console.log("oEmbed response: ", embed);
-    var playlistColumn = document.querySelector(".js-playlist");
+    var playlistColumn = document.querySelector(".js-inner-playlist");
     var songBox = document.createElement("div");
     songBox.innerHTML = embed.html;
     songBox.classList.add("js-songbox");
     playlistColumn.insertBefore(songBox, playlistColumn.firstChild);
+    localStorage.setItem("key", playlistColumn.innerHTML);
   });
 };
 
@@ -80,6 +81,7 @@ soundcloudAPI.renderCards = function (tracks) {
 
     // Span inside button
     addSpan = document.createElement("span");
+    addSpan.classList.add("add");
     addSpan.innerHTML = "Add to playlist";
     buttonDiv.appendChild(addSpan);
 
@@ -103,3 +105,14 @@ soundcloudAPI.getTrack = function (searchTerm) {
 
 soundcloudAPI.init();
 soundcloudAPI.getTrack("Timecop 1983");
+
+// Loading previously saved playlists
+var playlistColumn = document.querySelector(".js-inner-playlist");
+playlistColumn.innerHTML = localStorage.getItem("key");
+
+// Clear localstorage if clicked
+var clearPlaylist = document.querySelector(".js-clear-playlist");
+clearPlaylist.addEventListener("click", function () {
+  localStorage.clear();
+  playlistColumn.innerHTML = null;
+});

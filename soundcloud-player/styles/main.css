@@ -17,7 +17,6 @@ a {
 }
 
 span {
-  color: #a3be8c;
   font-family: Rubix;
 }
 
@@ -92,11 +91,17 @@ iframe {
   color: #b48ead;
 }
 
-#soundcloud-player .add.icon {
+#soundcloud-player .add {
   pointer-events: initial;
   cursor: pointer;
   color: #a3be8c;
 }
+#soundcloud-player .close {
+  pointer-events: initial;
+  cursor: pointer;
+  color: #bf616a;
+}
+
 #soundcloud-player .attached {
   background: #4c566a;
 }
@@ -110,4 +115,9 @@ iframe {
   padding-left: 2%;
   padding-right: 2%;
   padding-top: 2%;
+}
+
+#soundcloud-player .js-clear-playlist {
+  margin: 2%;
+  border-radius: 10px;
 }
