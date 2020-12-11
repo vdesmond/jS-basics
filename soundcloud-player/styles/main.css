@@ -102,7 +102,7 @@ iframe {
   color: #bf616a;
 }
 
-#soundcloud-player .attached {
+#soundcloud-player .js-button {
   background: #4c566a;
 }
 
@@ -120,4 +120,8 @@ iframe {
 #soundcloud-player .js-clear-playlist {
   margin: 2%;
   border-radius: 10px;
+}
+
+#soundcloud-player .js-remove-button {
+  background: #3b4252;
 }

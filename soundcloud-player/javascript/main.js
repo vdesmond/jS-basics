@@ -14,12 +14,35 @@ soundcloudAPI.embediFrame = function (songLink) {
     auto_play: true,
   }).then(function (embed) {
     console.log("oEmbed response: ", embed);
+
+    // Load iframe in div
     var playlistColumn = document.querySelector(".js-inner-playlist");
     var songBox = document.createElement("div");
     songBox.innerHTML = embed.html;
+
+    // Add remove button
+    var removeButton = document.createElement("div");
+    removeButton.classList.add("js-remove-button", "ui", "attached", "button");
+    var removeIcon = document.createElement("i");
+    removeIcon.classList.add("circular", "inverted", "red", "close", "icon");
+    removeButton.appendChild(removeIcon);
+
+    songBox.appendChild(removeButton);
     songBox.classList.add("js-songbox");
+
+    // Add div to playlist
     playlistColumn.insertBefore(songBox, playlistColumn.firstChild);
+
+    // Store current playlist to local storage
     localStorage.setItem("key", playlistColumn.innerHTML);
+
+    // Listen for click to remove iframe
+    removeButton.addEventListener("click", function () {
+      console.log(playlistColumn);
+      songBox.innerHTML = null;
+      console.log(playlistColumn);
+      localStorage.setItem("key", playlistColumn.innerHTML);
+    });
   });
 };
 
@@ -31,9 +54,6 @@ soundcloudAPI.renderCards = function (tracks) {
     var songLink = track.permalink_url;
     var songTitle = track.title;
     var songAlbumArt = track.artwork_url.replace("-large", "-t500x500");
-
-    // Get search results div
-    var searchResults = document.querySelector(".js-search-results");
 
     // cardDiv div
     var cardDiv = document.createElement("div");
@@ -93,7 +113,7 @@ soundcloudAPI.renderCards = function (tracks) {
 };
 
 // Get track given search term
-soundcloudAPI.getTrack = function (searchTerm) {
+soundcloudAPI.getTracksAndLoad = function (searchTerm) {
   SC.get("/tracks", {
     limit: 10,
     q: searchTerm,
@@ -104,7 +124,6 @@ soundcloudAPI.getTrack = function (searchTerm) {
 };
 
 soundcloudAPI.init();
-soundcloudAPI.getTrack("Timecop 1983");
 
 // Loading previously saved playlists
 var playlistColumn = document.querySelector(".js-inner-playlist");
@@ -116,3 +135,26 @@ clearPlaylist.addEventListener("click", function () {
   localStorage.clear();
   playlistColumn.innerHTML = null;
 });
+
+// Get search results div
+var searchResults = document.querySelector(".js-search-results");
+
+// Capture text in Search box
+// Load when button pressed
+document.querySelector(".js-submit").addEventListener("click", function () {
+  let inputText = document.querySelector(".js-search").value;
+  searchResults.innerHTML = null;
+  soundcloudAPI.getTracksAndLoad(inputText);
+});
+
+//Load when "Enter/Return" is pressed
+document
+  .querySelector(".js-search")
+  .addEventListener("keyup", function (event) {
+    let inputText = document.querySelector(".js-search").value;
+    // Enter key
+    if (event.which == 13) {
+      searchResults.innerHTML = null;
+      soundcloudAPI.getTracksAndLoad(inputText);
+    }
+  });
