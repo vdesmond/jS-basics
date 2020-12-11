@@ -59,8 +59,8 @@ span {
 
 #soundcloud-player .main {
   box-sizing: border-box;
-  padding: 30px;
-  margin: 30px;
+  padding: 20px;
+  margin: 50px;
 }
 
 #soundcloud-player .input {
