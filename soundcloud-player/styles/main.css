@@ -1,66 +1,101 @@
 /* CURRENTLY IN: styles/main.css */
-html, body {
-	height: 100%;
-	width: 100%;
-	min-height: 100%;
+@font-face {
+  font-family: Rubix;
+  src: url(themes/font-family/Rubik-VariableFont_wght.ttf);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+}
+
+a {
+  color: #434c5e;
+  font-family: Rubix;
+}
+
+span {
+  color: #a3be8c;
+  font-family: Rubix;
 }
 
 #soundcloud-player .col {
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #eceff4;
 }
 
 #soundcloud-player .col-left {
-	width: 20%;
-	height: 100%;
-	background-color: #292929;
-	overflow: auto;
+  width: 20%;
+  height: 100%;
+  background-color: #2e3440;
+  overflow: auto;
 
-	position: fixed;
-	left: 0;
-	top: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
 
-	min-width: 200px;
-	z-index: 1;
+  min-width: 200px;
+  z-index: 1;
 }
 
 #soundcloud-player .col-right {
-	width: 100%;
-	height: 100%;
-	overflow: auto;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 
-	position: fixed;
-	left: 0;
-	top: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
 
-	box-sizing: border-box;
-	padding-left: 20%;
+  box-sizing: border-box;
+  padding-left: 20%;
 }
 
 #soundcloud-player .main {
-	box-sizing: border-box;
-	padding: 30px;
-	margin: 30px;
+  box-sizing: border-box;
+  padding: 30px;
+  margin: 30px;
 }
 
 #soundcloud-player .input {
-	width: 100%;
+  width: 100%;
+  border-radius: 7px;
+  background: #eceff4;
+  border: 3px solid #d08770;
 }
 
 #soundcloud-player .input-search {
-	width: 100%;
-	display: block;
+  width: 100%;
+  display: block;
+  font-family: Rubix;
 }
 
+#soundcloud-player .card {
+  border: 3px solid #d8dee9;
+  border-radius: 7px;
+}
 #soundcloud-player .search.icon {
-	pointer-events: initial;
-	cursor: pointer;
+  pointer-events: initial;
+  cursor: pointer;
+  color: #d08770;
+}
+
+#soundcloud-player .add.icon {
+  pointer-events: initial;
+  cursor: pointer;
+  color: #a3be8c;
+}
+#soundcloud-player .attached {
+  background: #4c566a;
 }
 
 #soundcloud-player .search-results {
-	justify-content: center;
-    margin-top: 30px;
+  justify-content: center;
+  margin-top: 30px;
 }
