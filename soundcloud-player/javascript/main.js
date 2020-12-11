@@ -8,14 +8,28 @@ soundcloudAPI.init = function () {
   });
 };
 
+// Embed iframe in playlist given song link
+soundcloudAPI.embediFrame = function (songLink) {
+  SC.oEmbed(songLink, {
+    auto_play: true,
+  }).then(function (embed) {
+    console.log("oEmbed response: ", embed);
+    var playlistColumn = document.querySelector(".js-playlist");
+    var songBox = document.createElement("div");
+    songBox.innerHTML = embed.html;
+    songBox.classList.add("js-songbox");
+    playlistColumn.insertBefore(songBox, playlistColumn.firstChild);
+  });
+};
+
 // Render cards given tracks object
 soundcloudAPI.renderCards = function (tracks) {
   //For each track in tracks
   tracks.forEach(function (track) {
     // Get song link, title and image link
-    var songLink = track["purchase_url"];
-    var songTitle = track["title"];
-    var songAlbumArt = track["artwork_url"];
+    var songLink = track.permalink_url;
+    var songTitle = track.title;
+    var songAlbumArt = track.artwork_url.replace("-large", "-t500x500");
 
     // Get search results div
     var searchResults = document.querySelector(".js-search-results");
@@ -68,12 +82,18 @@ soundcloudAPI.renderCards = function (tracks) {
     addSpan = document.createElement("span");
     addSpan.innerHTML = "Add to playlist";
     buttonDiv.appendChild(addSpan);
+
+    // Listen for click to embed iframe
+    buttonDiv.addEventListener("click", function () {
+      soundcloudAPI.embediFrame(songLink);
+    });
   });
 };
 
 // Get track given search term
 soundcloudAPI.getTrack = function (searchTerm) {
   SC.get("/tracks", {
+    limit: 10,
     q: searchTerm,
   }).then(function (tracks) {
     console.log(tracks);
